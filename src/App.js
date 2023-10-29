@@ -2,7 +2,7 @@ import React from 'react'
 
 import Products from './components/App'
 import Quiz from './components/quiz'
-import Counter from './components/reducer'
+import Counter from './components/Counter'
 
 export default function App() {
   return (
@@ -10,7 +10,7 @@ export default function App() {
 
 {/* <Products /> */}
     {/* <Quiz /> */}
-    <Counter />
+    {/* <Counter /> */}
     
 
   </>
