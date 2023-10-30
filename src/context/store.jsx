@@ -6,7 +6,7 @@ const Provider = ({ children }) => {
   const [data, setData] = useState([]);
 
 
-
+  
 
   return (
     <>
