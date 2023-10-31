@@ -1,5 +1,6 @@
 import React from 'react'
-import ThemeToggle from './components/themeToggle'
+
+import Login from './components/login'
 
 export default function App() {
   return (
@@ -8,7 +9,8 @@ export default function App() {
 {/* <Products /> */}
     {/* <Quiz /> */}
     {/* <Counter /> */}
-  <ThemeToggle />
+  {/* <ThemeToggle /> */}
+  <Login />
     
 
   </>
