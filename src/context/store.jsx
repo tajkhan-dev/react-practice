@@ -1,52 +1,16 @@
-import React, { useReducer, createContext } from "react";
-import Cookies from "js-cookie";
+import React, {createContext,useEffect,useState } from "react";
 
 export const myContext = createContext(null);
 
-// cookies.set
-// cookies.get
-// cookie.remove
-
-const mytoken=Cookies.get("token")
-if(mytoken){
-  window.location.href="/"
-}else{
-  window.location.href="/login"
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function reducer(isLogin,action) {
-  //reducer logic here
-  
-  if(action.type==="loggedIn"){
-    Cookies.set("token","yes")
-   
-  }else if(action.type==="loggedOut"){
-    Cookies.remove('token')
-  }
-}
 const Provider = ({ children }) => {
-  const [isLogin, dispatch] = useReducer(reducer,false);
+  const [email,setEmail]=useState("")
+  const [userName,setUserName]=useState("")
+  const [users,setUsers]=useState([])
+ 
 
   return (
     <>
-      <myContext.Provider value={{ isLogin, dispatch }}>
-        
-        {children}
-      </myContext.Provider>
+      <myContext.Provider value={{email,setEmail,userName,setUserName,users,setUsers}}>{children}</myContext.Provider>
     </>
   );
 };
