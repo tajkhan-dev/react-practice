@@ -1,18 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { myContext } from "../context/store";
 
 const Login = () => {
   const { email, setEmail, userName, setUserName, setUsers, users } =
     useContext(myContext);
-  
-  console.log(users);
+
+  useEffect(() => {
+    localStorage.setItem("users", JSON.stringify(users));
+  },[users]);
 
   function addToLocalStorage(e) {
-    alert("userAdded to localstorage");
-    setUsers([...users, { email: email, username: userName }]);
+  e.preventDefault()
 
-    localStorage.setItem("users", JSON.stringify(users));
-    e.preventDefault();
+ const data={email:email,userName:userName}
+setUsers([...users,data])
+
   }
 
   return (
